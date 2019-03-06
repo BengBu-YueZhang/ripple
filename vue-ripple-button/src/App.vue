@@ -1,17 +1,26 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <h3>How to use?</h3>
-    <h2>RippleButton组件</h2>
+    <h1>Ripple</h1>
+    <h2>RippleButton Component</h2>
+    <h3>How to use</h3>
     <pre class="code">
       <code>
         {{codeFragment1}}
       </code>
     </pre>
+    <h3>Preview</h3>
     <ripple-button text="info" width="300" />
     <ripple-button text="error" color="#e57373" text-color="#fafafa" width="300" />
     <ripple-button text="waring" ripple-color="rgba(255, 255, 255, 0.6)" color="#ffee58" text-color="#212121" width="300" />
-    <h2>WithRipple组件</h2>
+    <h2>WithRipple Component</h2>
+    <h3>How to use</h3>
+    <pre class="code">
+      <code>
+        {{codeFragment2}}
+      </code>
+    </pre>
+    <h3>Preview</h3>
     <with-ripple>
       <div class="paragraph">
         <h5 class="paragraph-title">Hi Vue!</h5>
@@ -42,7 +51,14 @@ export default {
 
         <ripple-button text="waring" ripple-color="rgba(255, 255, 255, 0.6)" color="#ffeb3b" text-color="#212121" width="300" />
       `,
-      codeFragment2: ''      
+      codeFragment2: `
+        <with-ripple>
+          <div class="paragraph">
+            <h5 class="paragraph-title">Hi Vue!</h5>
+            <p class="paragraph-detail">Vue (pronounced /vjuː/, like view) is a progressive ……</p>
+          </div>
+        </with-ripple>
+      `      
     }
   }
 }
@@ -55,14 +71,15 @@ export default {
   align-items: center;
   flex-direction: column;
   margin-top: 60px;
+  padding: 20px;
 }
 
 .code {
   background-color: #eee;
 }
 
-h2, h3, h5 {
-  font-weight: normal;
+h1, h2, h3, h5 {
+  font-weight: 300;
 }
 
 .paragraph {
