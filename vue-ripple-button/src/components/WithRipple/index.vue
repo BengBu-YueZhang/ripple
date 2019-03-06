@@ -1,5 +1,5 @@
 <template>
-  <div class="pack-ripple__wrapper">
+  <div class="with-ripple__wrapper" ref="with">
     <slot></slot>
   </div>
 </template>

@@ -92,14 +92,10 @@ export default {
   position: relative;
   width: auto;
   height: 36px;
-  border-radius: 2px;
   line-height: 36px;
-  font-size: 14px;
-  font-weight: normal;
-  color: #fff;
-  background-color: #42a5f5;
-  user-select: none;
+  border-radius: 2px;
   margin: 2px;
+  background-color: #42a5f5;
 }
 
 .ripple-button__content {
@@ -109,6 +105,10 @@ export default {
   width: 100%;
   height: 100%;
   text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  user-select: none;
 }
 
 .ripple {
