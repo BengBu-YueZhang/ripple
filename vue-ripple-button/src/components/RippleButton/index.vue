@@ -56,7 +56,7 @@ export default {
 
   methods: {
     /**
-     * 初始化事件
+     * 初始化
      */
     init () {
       let buttonRefs = this.$refs.button
