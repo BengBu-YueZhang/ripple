@@ -5,8 +5,11 @@
 </template>
 
 <script>
+import { createRipple } from '../../util/createRipple.js'
+import config from '../../config'
+
 export default {
-  name: 'PackRipple'
+  name: 'WithRipple'
 }
 </script>
 

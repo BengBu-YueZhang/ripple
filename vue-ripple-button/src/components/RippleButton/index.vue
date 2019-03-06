@@ -6,9 +6,8 @@
       width: width ? `${width}px` : '',
       backgroundColor: color ? color : '',
       color: textColor ? textColor : ''
-    }"
-  >
-    <span>{{ text }}</span>
+    }">
+    <span class="ripple-button__content">{{ text }}</span>
   </div>
 </template>
 
@@ -60,28 +59,28 @@ export default {
      * 初始化事件
      */
     init () {
-      let button = this.$refs.button
-      button.addEventListener('mousedown', (event) => {
-        const { top, left, width } = button.getBoundingClientRect()
+      let buttonRefs = this.$refs.button
+      buttonRefs.addEventListener('mousedown', (event) => {
+        const { top, left, width } = buttonRefs.getBoundingClientRect()
         const x = event.clientX - left
         const y = event.clientY - top
         const ripple = createRipple(x, y, width, this.rippleColor)
         const svg = ripple.ripple
-        button.appendChild(svg)
+        buttonRefs.appendChild(svg)
         ripple.expandAnimate.beginElement()
         const remove = (event) => {
           if (event.type === 'mouseup') {
             this.$emit('click')
           }
-          button.removeEventListener('mouseup', remove)
-          button.removeEventListener('mouseout', remove)
+          buttonRefs.removeEventListener('mouseup', remove)
+          buttonRefs.removeEventListener('mouseout', remove)
           ripple.fadeAnimate.beginElement()
           setTimeout(() => {
-            button.removeChild(svg)
+            buttonRefs.removeChild(svg)
           }, config.dur)
         }
-        button.addEventListener('mouseup', remove)
-        button.addEventListener('mouseout', remove)
+        buttonRefs.addEventListener('mouseup', remove)
+        buttonRefs.addEventListener('mouseout', remove)
       })
     }
   }
@@ -101,6 +100,15 @@ export default {
   background-color: #42a5f5;
   user-select: none;
   margin: 2px;
+}
+
+.ripple-button__content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 .ripple {
