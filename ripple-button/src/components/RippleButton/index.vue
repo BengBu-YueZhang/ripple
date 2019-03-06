@@ -62,7 +62,7 @@ export default {
     init () {
       let button = this.$refs.button
       button.addEventListener('mousedown', (event) => {
-        const { top, left, width, height } = button.getBoundingClientRect()
+        const { top, left, width } = button.getBoundingClientRect()
         const x = event.clientX - left
         const y = event.clientY - top
         const ripple = createRipple(x, y, width, this.rippleColor)
