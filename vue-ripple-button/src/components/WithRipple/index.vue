@@ -39,7 +39,7 @@ export default {
           withRefs.removeEventListener('mouseout', remove)
           ripple.fadeAnimate.beginElement()
           setTimeout(() => {
-            buttonRefs.removeChild(svg)
+            withRefs.removeChild(svg)
           }, config.dur)
         }
         withRefs.addEventListener('mouseup', remove)
