@@ -1,0 +1,16 @@
+.ripple-button__wrapper {
+  position: relative;
+  width: 180px;
+  height: 36px;
+  font-size: 14px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 18px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.ripple-button__content {
+  position: relative;
+  z-index: 2;
+}

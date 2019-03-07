@@ -1,7 +1,12 @@
 import React from 'react'
 import Ripple from '../Ripple'
+import config from '../../config'
+import PropTypes from 'prop-types'
+import './index.css'
 
-export default class RippleButton extends React.PureComponent {
+function noop () {}
+
+class RippleButton extends React.PureComponent {
   constructor (props) {
     super(props)
     this.rippleRef = React.createRef()
@@ -11,25 +16,21 @@ export default class RippleButton extends React.PureComponent {
     this.props.onClick && this.props.onClick(event)
   }
 
-  handleMouseUp = (event) => {
-    this.props.onMouseUp && this.props.onMouseUp(event)
-  }
-
   handleMouseDown = (event) => {
     this.props.onMouseDown && this.props.onMouseDown(event)
     this.rippleRef.current.createRipple(event)
   }
 
   render () {
-    const { children, rippleColor } = this.props
+    const { children, rippleColor, className } = this.props
 
     return (
       <div
+        className={`ripple-button__wrapper ${className}`}
         onMouseDown={this.handleMouseDown}
-        onMouseDown={this.handleMouseUp}
         onClick={this.handleClick}
       >
-        <span>{ children }</span>
+        <span className="ripple-button__content">{ children }</span>
         <Ripple
           rippleColor={rippleColor}
           ref={this.rippleRef}
@@ -38,3 +39,17 @@ export default class RippleButton extends React.PureComponent {
     )
   }
 }
+
+RippleButton.propTypes = {
+  rippleColor: PropTypes.string,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+}
+
+RippleButton.defaultProps = {
+  rippleColor: config.color,
+  onClick: noop,
+  className: ''
+}
+
+export default RippleButton

@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -16,3 +19,21 @@
   color: white;
 }
 
+.info {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.error {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.warning {
+  background-color: #ffeb3b;
+  color: #212121;
+}
+
+.block {
+  margin: 2px;
+}
