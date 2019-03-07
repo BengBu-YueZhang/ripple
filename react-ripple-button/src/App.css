@@ -3,6 +3,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 .App-logo {
@@ -36,4 +37,18 @@
 
 .block {
   margin: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+}
+
+.code {
+  background-color: #eee;
+  font-size: 14px;
+}
+
+.content {
+  padding: 10px 20px;
+  background-color: #eee;
 }
