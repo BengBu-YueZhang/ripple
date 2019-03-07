@@ -73,7 +73,7 @@ export default {
         const svg = ripple.ripple
         buttonRefs.appendChild(svg)
         ripple.expandAnimate.beginElement()
-        const remove = (event) => {
+        const remove = () => {
           buttonRefs.removeEventListener('mouseup', remove)
           buttonRefs.removeEventListener('mouseout', remove)
           ripple.fadeAnimate.beginElement()
