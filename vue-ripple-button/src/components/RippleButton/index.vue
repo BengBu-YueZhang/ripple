@@ -2,6 +2,7 @@
   <div
     class="ripple-button__wrapper"
     ref="button"
+    @click="handleClick"
     :style="{
       width: width ? `${width}px` : '',
       backgroundColor: color ? color : '',
@@ -55,6 +56,10 @@ export default {
   },
 
   methods: {
+    handleClick () {
+      this.$emit('click')
+    },
+  
     /**
      * 初始化
      */
@@ -69,9 +74,6 @@ export default {
         buttonRefs.appendChild(svg)
         ripple.expandAnimate.beginElement()
         const remove = (event) => {
-          if (event.type === 'mouseup') {
-            this.$emit('click')
-          }
           buttonRefs.removeEventListener('mouseup', remove)
           buttonRefs.removeEventListener('mouseout', remove)
           ripple.fadeAnimate.beginElement()
